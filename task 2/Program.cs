@@ -9,7 +9,7 @@ void Main()
     if (M > 0 && N > 0)
     {
         int result = AckermannFunction(M, N);
-        Console.WriteLine(result);
+        Console.WriteLine($"A({M},{N}) = {result}");
     }
     else
         Console.Write("Введено некорректное число");
