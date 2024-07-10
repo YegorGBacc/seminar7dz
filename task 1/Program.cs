@@ -4,16 +4,40 @@
 
 void Main()
 {
-    int M = ReadInt("Введите число M: ");
-    int N = ReadInt("Введите число N: ");
-    PrintNumber(M, N);
+    int M = ReadInt("Введите натуральное число M: ");
+    int N = ReadInt("Введите натуральное число N: ");
+    if (M <= 0 | N <= 0)
+    {
+        Console.Write("Введено некорректное число");
+    }
+    else if (M > N)
+    {
+        PrintNumber2(M, N);
+        Console.Write(N);
+    }
+    else
+    {
+        PrintNumber(M, N);
+        Console.Write(N);
+    }
 }
 
+// Метод для случая, когда первое введённое число больше второго.
+void PrintNumber2(int M, int N)
+{
+    if (N < M)
+    {
+        Console.Write(M + ", ");
+        PrintNumber2(M - 1, N);
+    }
+}
+
+// Метод для случая, когда первое введённое число меньше второго.
 void PrintNumber(int M, int N)
 {
-    if (M <= N)
+    if (M < N)
     {
-        Console.Write(M + " ");
+        Console.Write(M + ", ");
         PrintNumber(M + 1, N);
     }
 }
